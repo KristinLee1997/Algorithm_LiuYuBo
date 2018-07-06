@@ -1,10 +1,10 @@
 package structure.heap.heap_sort;
 
 /**
- * @author Àîº½
- * @school ¹ş¶û±õÀí¹¤´óÑ§
+ * @author æèˆª
+ * @school å“ˆå°”æ»¨ç†å·¥å¤§å­¦
  * @date 2017/12/3 15:26
- * @desc Ô­µØ¶ÑÅÅĞò:²»¿ª±Ù¶Ñ,ÔÚÔ­Êı×éÉÏ½øĞĞÅÅĞò
+ * @desc åŸåœ°å †æ’åº:ä¸å¼€è¾Ÿå †,åœ¨åŸæ•°ç»„ä¸Šè¿›è¡Œæ’åº
  **/
 public class HeapSort {
     private HeapSort() {
@@ -21,7 +21,7 @@ public class HeapSort {
         }
     }
 
-    //´ËÊ±Êı×éÊÇ´Ó0¿ªÊ¼Ë÷ÒıµÄ,ËùÒÔdataÊı×éµÄÏÂ±ê¶¼Ó¦¸Ã¼Ó1
+    //æ­¤æ—¶æ•°ç»„æ˜¯ä»0å¼€å§‹ç´¢å¼•çš„,æ‰€ä»¥dataæ•°ç»„çš„ä¸‹æ ‡éƒ½åº”è¯¥åŠ 1
     private static void shiftDown(Comparable[] arr, int n, int k) {
         while (2 * k + 1 < n) {
             int j = 2 * k + 1;

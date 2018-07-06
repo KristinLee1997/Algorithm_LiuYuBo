@@ -1,10 +1,10 @@
 package structure.binarytree.b_BinarySearchTreeBasics;
 
 /**
- * @author Àîº½
- * @school ¹ş¶û±õÀí¹¤´óÑ§
+ * @author æèˆª
+ * @school å“ˆå°”æ»¨ç†å·¥å¤§å­¦
  * @date 2017/12/4 17:00
- * @desc  »ù±¾¶ş²åËÑË÷Ê÷
+ * @desc åŸºæœ¬äºŒæ’æœç´¢æ ‘
  **/
 public class BST<Key extends Comparable<Key>, Value> {
     private class Node {

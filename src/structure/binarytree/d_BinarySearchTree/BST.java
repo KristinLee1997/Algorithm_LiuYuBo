@@ -1,8 +1,8 @@
 package structure.binarytree.d_BinarySearchTree;
 
 /**
- * @author Àîº½
- * @school ¹ş¶û±õÀí¹¤´óÑ§
+ * @author æèˆª
+ * @school å“ˆå°”æ»¨ç†å·¥å¤§å­¦
  * @date 2017/12/4 17:50
  * @desc
  **/
@@ -46,7 +46,7 @@ public class BST<Key extends Comparable<? super Key>, Value> {
         return search(root, key);
     }
 
-    //ÒÔrootÎª¸ù½ÚµãµÄ¶ş²æÊ÷ÖĞÊÇ·ñ´æÔÚ¼üÎªkeyµÄ½áµã,·µ»Ø½áµãµÄvalue
+    //ä»¥rootä¸ºæ ¹èŠ‚ç‚¹çš„äºŒå‰æ ‘ä¸­æ˜¯å¦å­˜åœ¨é”®ä¸ºkeyçš„ç»“ç‚¹,è¿”å›ç»“ç‚¹çš„value
     private Value search(Node root, Key key) {
         if (root == null) {
             return null;
@@ -60,7 +60,7 @@ public class BST<Key extends Comparable<? super Key>, Value> {
         }
     }
 
-    //ÒÔrootÎª¸ù½ÚµãµÄ¶ş²æÊ÷ÖĞÊÇ·ñ´æÔÚ¼üÎªkeyµÄ½áµã,·µ»Øtrue/false
+    //ä»¥rootä¸ºæ ¹èŠ‚ç‚¹çš„äºŒå‰æ ‘ä¸­æ˜¯å¦å­˜åœ¨é”®ä¸ºkeyçš„ç»“ç‚¹,è¿”å›true/false
     private boolean contain(Node root, Key key) {
         if (root == null) {
             return false;
@@ -74,18 +74,18 @@ public class BST<Key extends Comparable<? super Key>, Value> {
         }
     }
 
-    //Ïò¶ş²æËÑË÷Ê÷ÖĞ²åÈë½Úµã
+    //å‘äºŒå‰æœç´¢æ ‘ä¸­æ’å…¥èŠ‚ç‚¹
     private Node insert(Node root, Key key, Value value) {
-        //Èç¹ûµ±Ç°rootÎª¿ÕÊ±,ËµÃ÷ÒÑ¾­ÕÒµ½Ó¦¸Ã²åÈëµÄÎ»ÖÃ,¶øÇÒ¶ş²æÊ÷ÖĞÃ»ÓĞÕâ¸öÔªËØ,´ËÊ±Ó¦¸ÃĞÂ½¨Ò»¸ö½Úµã,½«Æä²åÈëÔÚÕâ
+        //å¦‚æœå½“å‰rootä¸ºç©ºæ—¶,è¯´æ˜å·²ç»æ‰¾åˆ°åº”è¯¥æ’å…¥çš„ä½ç½®,è€Œä¸”äºŒå‰æ ‘ä¸­æ²¡æœ‰è¿™ä¸ªå…ƒç´ ,æ­¤æ—¶åº”è¯¥æ–°å»ºä¸€ä¸ªèŠ‚ç‚¹,å°†å…¶æ’å…¥åœ¨è¿™
         if (root == null) {
             size++;
             root = new Node(key, value);
         }
-        if (key.compareTo(root.key) == 0) {//Èç¹ûÕÒµ½ÏàµÈµÄÖµ,Ôò½«Æä¸²¸Ç
+        if (key.compareTo(root.key) == 0) {//å¦‚æœæ‰¾åˆ°ç›¸ç­‰çš„å€¼,åˆ™å°†å…¶è¦†ç›–
             root.value = value;
-        } else if (key.compareTo(root.key) < 0) {//Èç¹ûkeyÖµĞ¡ÓÚrootÖµ,Ôòroot=root.left,È¥×ó×ÓÊ÷ÖĞËÑË÷
+        } else if (key.compareTo(root.key) < 0) {//å¦‚æœkeyå€¼å°äºrootå€¼,åˆ™root=root.left,å»å·¦å­æ ‘ä¸­æœç´¢
             root = insert(root.left, key, value);
-        } else { //Èç¹ûkeyÖµ´óÓÚrootÖµ,root=root.right,ÔòÈ¥ÓÉ×ÓÊ÷ÖĞËÑË÷
+        } else { //å¦‚æœkeyå€¼å¤§äºrootå€¼,root=root.right,åˆ™å»ç”±å­æ ‘ä¸­æœç´¢
             root = insert(root.right, key, value);
         }
         return root;
@@ -94,34 +94,34 @@ public class BST<Key extends Comparable<? super Key>, Value> {
     public static void main(String[] args) {
         int N = 1000000;
 
-        // ´´½¨Ò»¸öÊı×é£¬°üº¬[0...N)µÄËùÓĞÔªËØ
+        // åˆ›å»ºä¸€ä¸ªæ•°ç»„ï¼ŒåŒ…å«[0...N)çš„æ‰€æœ‰å…ƒç´ 
         Integer[] arr = new Integer[N];
         for (int i = 0; i < N; i++)
             arr[i] = new Integer(i);
 
-        // ´òÂÒÊı×éË³Ğò
+        // æ‰“ä¹±æ•°ç»„é¡ºåº
         for (int i = 0; i < N; i++) {
             int pos = (int) (Math.random() * (i + 1));
             Integer t = arr[pos];
             arr[pos] = arr[i];
             arr[i] = arr[pos];
         }
-        // ÓÉÓÚÎÒÃÇÊµÏÖµÄ¶ş·ÖËÑË÷Ê÷²»ÊÇÆ½ºâ¶ş²æÊ÷£¬
-        // ËùÒÔÈç¹û°´ÕÕË³Ğò²åÈëÒ»×éÊı¾İ£¬ÎÒÃÇµÄ¶ş·ÖËÑË÷Ê÷»áÍË»¯³ÉÎªÒ»¸öÁ´±í
-        // Æ½ºâ¶ş²æÊ÷µÄÊµÏÖ£¬ÎÒÃÇÔÚÕâ¸ö¿Î³ÌÖĞÃ»ÓĞÉæ¼°£¬
-        // ÓĞĞËÈ¤µÄÍ¬Ñ§¿ÉÒÔ²é¿´×ÊÁÏ×ÔÑ§ÖîÈçºìºÚÊ÷µÄÊµÏÖ
-        // ÒÔºóÓĞ»ú»á£¬ÎÒ»áÔÚ±ğµÄ¿Î³ÌÀïÏò´ó¼Ò½éÉÜÆ½ºâ¶ş²æÊ÷µÄÊµÏÖµÄ£º£©
+        // ç”±äºæˆ‘ä»¬å®ç°çš„äºŒåˆ†æœç´¢æ ‘ä¸æ˜¯å¹³è¡¡äºŒå‰æ ‘ï¼Œ
+        // æ‰€ä»¥å¦‚æœæŒ‰ç…§é¡ºåºæ’å…¥ä¸€ç»„æ•°æ®ï¼Œæˆ‘ä»¬çš„äºŒåˆ†æœç´¢æ ‘ä¼šé€€åŒ–æˆä¸ºä¸€ä¸ªé“¾è¡¨
+        // å¹³è¡¡äºŒå‰æ ‘çš„å®ç°ï¼Œæˆ‘ä»¬åœ¨è¿™ä¸ªè¯¾ç¨‹ä¸­æ²¡æœ‰æ¶‰åŠï¼Œ
+        // æœ‰å…´è¶£çš„åŒå­¦å¯ä»¥æŸ¥çœ‹èµ„æ–™è‡ªå­¦è¯¸å¦‚çº¢é»‘æ ‘çš„å®ç°
+        // ä»¥åæœ‰æœºä¼šï¼Œæˆ‘ä¼šåœ¨åˆ«çš„è¯¾ç¨‹é‡Œå‘å¤§å®¶ä»‹ç»å¹³è¡¡äºŒå‰æ ‘çš„å®ç°çš„ï¼šï¼‰
 
 
-        // ÎÒÃÇ²âÊÔÓÃµÄµÄ¶ş·ÖËÑË÷Ê÷µÄ¼üÀàĞÍÎªInteger£¬ÖµÀàĞÍÎªString
-        // ¼üÖµµÄ¶ÔÓ¦¹ØÏµÎªÃ¿¸öÕûĞÍ¶ÔÓ¦´ú±íÕâ¸öÕûĞÍµÄ×Ö·û´®
+        // æˆ‘ä»¬æµ‹è¯•ç”¨çš„çš„äºŒåˆ†æœç´¢æ ‘çš„é”®ç±»å‹ä¸ºIntegerï¼Œå€¼ç±»å‹ä¸ºString
+        // é”®å€¼çš„å¯¹åº”å…³ç³»ä¸ºæ¯ä¸ªæ•´å‹å¯¹åº”ä»£è¡¨è¿™ä¸ªæ•´å‹çš„å­—ç¬¦ä¸²
         BST<Integer, String> bst = new BST<Integer, String>();
         for (int i = 0; i < N; i++)
             bst.insert(new Integer(arr[i]), Integer.toString(arr[i]));
 
-        // ¶Ô[0...2*N)µÄËùÓĞÕûĞÍ²âÊÔÔÚ¶ş·ÖËÑË÷Ê÷ÖĞ²éÕÒ
-        // ÈôiÔÚ[0...N)Ö®¼ä£¬ÔòÄÜ²éÕÒµ½ÕûĞÍËù¶ÔÓ¦µÄ×Ö·û´®
-        // ÈôiÔÚ[N...2*N)Ö®¼ä£¬Ôò½á¹ûÎªnull
+        // å¯¹[0...2*N)çš„æ‰€æœ‰æ•´å‹æµ‹è¯•åœ¨äºŒåˆ†æœç´¢æ ‘ä¸­æŸ¥æ‰¾
+        // è‹¥iåœ¨[0...N)ä¹‹é—´ï¼Œåˆ™èƒ½æŸ¥æ‰¾åˆ°æ•´å‹æ‰€å¯¹åº”çš„å­—ç¬¦ä¸²
+        // è‹¥iåœ¨[N...2*N)ä¹‹é—´ï¼Œåˆ™ç»“æœä¸ºnull
         for (int i = 0; i < 2 * N; i++) {
             String res = bst.search(new Integer(i));
             if (i < N)

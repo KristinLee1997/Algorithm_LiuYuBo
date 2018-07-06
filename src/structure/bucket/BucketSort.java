@@ -1,5 +1,8 @@
 package structure.bucket;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+
 /**
  * @author 李航
  * @school 哈尔滨理工大学

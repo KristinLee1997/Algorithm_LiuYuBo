@@ -1,10 +1,10 @@
 package structure.binarytree.c_BinarySearchTreeInsert;
 
 /**
- * @author Àîº½
- * @school ¹ş¶û±õÀí¹¤´óÑ§
+ * @author æèˆª
+ * @school å“ˆå°”æ»¨ç†å·¥å¤§å­¦
  * @date 2017/12/4 17:06
- * @desc ¶ş²æËÑË÷Ê÷--²åÈë½Úµã
+ * @desc äºŒå‰æœç´¢æ ‘--æ’å…¥èŠ‚ç‚¹
  **/
 public class BST<Key extends Comparable<? super Key>, Value> {
     private class Node {
@@ -38,18 +38,18 @@ public class BST<Key extends Comparable<? super Key>, Value> {
         root = insert(root, key, value);
     }
 
-    //Ïò¶ş²æËÑË÷Ê÷ÖĞ²åÈë½Úµã
+    //å‘äºŒå‰æœç´¢æ ‘ä¸­æ’å…¥èŠ‚ç‚¹
     private Node insert(Node root, Key key, Value value) {
-        //Èç¹ûµ±Ç°rootÎª¿ÕÊ±,ËµÃ÷ÒÑ¾­ÕÒµ½Ó¦¸Ã²åÈëµÄÎ»ÖÃ,¶øÇÒ¶ş²æÊ÷ÖĞÃ»ÓĞÕâ¸öÔªËØ,´ËÊ±Ó¦¸ÃĞÂ½¨Ò»¸ö½Úµã,½«Æä²åÈëÔÚÕâ
+        //å¦‚æœå½“å‰rootä¸ºç©ºæ—¶,è¯´æ˜å·²ç»æ‰¾åˆ°åº”è¯¥æ’å…¥çš„ä½ç½®,è€Œä¸”äºŒå‰æ ‘ä¸­æ²¡æœ‰è¿™ä¸ªå…ƒç´ ,æ­¤æ—¶åº”è¯¥æ–°å»ºä¸€ä¸ªèŠ‚ç‚¹,å°†å…¶æ’å…¥åœ¨è¿™
         if (root == null) {
             size++;
             root = new Node(key, value);
         }
-        if (key.compareTo(root.key) == 0) {//Èç¹ûÕÒµ½ÏàµÈµÄÖµ,Ôò½«Æä¸²¸Ç
+        if (key.compareTo(root.key) == 0) {//å¦‚æœæ‰¾åˆ°ç›¸ç­‰çš„å€¼,åˆ™å°†å…¶è¦†ç›–
             root.value = value;
-        } else if (key.compareTo(root.key) < 0) {//Èç¹ûkeyÖµĞ¡ÓÚrootÖµ,Ôòroot=root.left,È¥×ó×ÓÊ÷ÖĞËÑË÷
+        } else if (key.compareTo(root.key) < 0) {//å¦‚æœkeyå€¼å°äºrootå€¼,åˆ™root=root.left,å»å·¦å­æ ‘ä¸­æœç´¢
             root = insert(root.left, key, value);
-        } else { //Èç¹ûkeyÖµ´óÓÚrootÖµ,root=root.right,ÔòÈ¥ÓÉ×ÓÊ÷ÖĞËÑË÷
+        } else { //å¦‚æœkeyå€¼å¤§äºrootå€¼,root=root.right,åˆ™å»ç”±å­æ ‘ä¸­æœç´¢
             root = insert(root.right, key, value);
         }
         return root;

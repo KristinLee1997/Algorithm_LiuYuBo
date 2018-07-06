@@ -8,10 +8,10 @@ import java.util.Scanner;
 import java.util.Vector;
 
 /**
- * @author Àîº½
- * @school ¹ş¶û±õÀí¹¤´óÑ§
+ * @author æèˆª
+ * @school å“ˆå°”æ»¨ç†å·¥å¤§å­¦
  * @date 2017/12/4 20:45
- * @desc ÎÄ¼şÏà¹Ø²Ù×÷
+ * @desc æ–‡ä»¶ç›¸å…³æ“ä½œ
  **/
 public class FileOperations {
     public static boolean readFile(String filename, Vector<String> words) {
@@ -20,7 +20,7 @@ public class FileOperations {
             return false;
         }
 
-        //ÎÄ¼ş¶ÁÈ¡
+        //æ–‡ä»¶è¯»å–
         Scanner scanner;
         try {
             File file = new File(filename);
@@ -36,9 +36,9 @@ public class FileOperations {
             return false;
         }
 
-        //¼òµ¥·Ö´Ê
-        //Õâ¸ö·Ö´Ê·½Ê½Ïà¶Ô¼òÂª,Ã»ÓĞ¿¼ÂÇÎÄ±¾´¦ÀíÖĞµÄÌØÊâÎÊÌâ
-        //ÔÚÕâÀïÖ»×ödemoÕ¹Ê¾ÓÃ
+        //ç®€å•åˆ†è¯
+        //è¿™ä¸ªåˆ†è¯æ–¹å¼ç›¸å¯¹ç®€é™‹,æ²¡æœ‰è€ƒè™‘æ–‡æœ¬å¤„ç†ä¸­çš„ç‰¹æ®Šé—®é¢˜
+        //åœ¨è¿™é‡Œåªåšdemoå±•ç¤ºç”¨
         if (scanner.hasNextLine()) {
 
             String contents = scanner.useDelimiter("\\A").next();
