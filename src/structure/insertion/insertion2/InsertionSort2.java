@@ -35,8 +35,7 @@ public class InsertionSort2 {
             Comparable temp = arr[i];
             int j = i;
             for (; j > 0 && arr[j - 1].compareTo(temp) > 0; j--) {
-                arr[j] = arr[j - 1];
-            }
+                arr[j] = arr[j - 1]; }
             arr[j] = temp;
         }
     }
