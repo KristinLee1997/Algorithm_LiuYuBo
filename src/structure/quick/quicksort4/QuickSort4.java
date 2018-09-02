@@ -13,7 +13,7 @@ public class QuickSort4 {
     private static <T extends Comparable<? super T>> int partation(T[] arr, int l, int r) {
         swap(arr, l, (int) (Math.random() * (r - l + 1) + l));
         T v = arr[l];
-        int i = l + 1, j = r;
+        int i = l , j = r;
         while (i < j) {
             while (i < j && v.compareTo(arr[j]) < 0) {
                 j--;
